@@ -1,6 +1,15 @@
 # first-go-api
 My first go API
 
+
+to run this app:
+
+go mod init
+go mod tidy
+go run main.go
+
+
+
 on run docker-compose up access `localhost:16543/` and log in with PGADMIN_DEFAULT_EMAIL and PGADMIN_DEFAULT_PASSWORD used on docker compose.
 
 to register a server: 
