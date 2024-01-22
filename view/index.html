@@ -1,4 +1,4 @@
-{{ define "Index" }}
+{{ define "IndexView" }}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +35,12 @@
                             <td>{{.Description}}</td>
                             <td>{{.Price}}</td>
                             <td>{{.Quantity}}</td>
+                            <td>
+                                <button onclick="onEdit('{{.Id}}')" class="btn btn-secondary">Edit</button>
+                            </td>
+                            <td>
+                                <button onclick="onDelete('{{.Id}}')" class="btn btn-danger">Delete</button>
+                            </td>
                         </tr>
                         {{ end }}
                     </tbody>
@@ -45,6 +51,18 @@
             <a href="/create" class="btn btn-primary mb-2">Create new product</a>
         </div>
     </div>
+    <script>
+        const onDelete = (id) => {
+            const response = confirm("Are you sure?")
+            if (response) {
+                window.location = `/delete?id=${id}`
+            }
+        }
+
+        const onEdit = (id) => {
+            window.location = `/edit?id=${id}`
+        }
+    </script>
 </body>
 </html>
 {{ end }}

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"SouzaBernardo/first-go-api/routes"
+	"SouzaBernardo/first-go-api/controllers/routes"
 	"net/http"
 
 	_ "github.com/lib/pq"
