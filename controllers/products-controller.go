@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"SouzaBernardo/first-go-api/controllers/service"
-	"SouzaBernardo/first-go-api/model/entity"
+	"github.com/SouzaBernardo/first-go-api/controllers/service"
+	"github.com/SouzaBernardo/first-go-api/model/entity"
 	"html/template"
 	"net/http"
 )

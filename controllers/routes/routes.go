@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"SouzaBernardo/first-go-api/controllers"
+	"github.com/SouzaBernardo/first-go-api/controllers"
 	"net/http"
 )
 

@@ -1,7 +1,7 @@
 package service
 
 import (
-	"SouzaBernardo/first-go-api/model/entity"
+	"github.com/SouzaBernardo/first-go-api/model/entity"
 	"log"
 	"net/http"
 	"strconv"
