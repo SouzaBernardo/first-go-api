@@ -11,8 +11,10 @@ services:
       PGDATA: /data/postgres
     ports:
       - "5432:5432"
+    volumes:
+      - ./model/scripts:/docker-entrypoint-initdb.d
     networks:
-      - postgres-compose-network
+      - server-network
 
   pgadmin-compose:
     image: dpage/pgadmin4
@@ -24,19 +26,21 @@ services:
     depends_on:
       - postgres-contaner
     networks:
-      - postgres-compose-network
+      - server-network
 
-  go-service:
-    container_name: go-service
+  go-server:
+    container_name: go-server
     build:
+      context: .
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     depends_on:
+      - pgadmin-compose
       - postgres-contaner
     networks:
-      - postgres-compose-network
+      - server-network
 
 networks:
-  postgres-compose-network:
+  server-network:
     driver: bridge
