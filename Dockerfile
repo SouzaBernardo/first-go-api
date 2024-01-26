@@ -1,14 +1,15 @@
-FROM golang:1.20
+FROM golang
 
-WORKDIR /go/src/SouzaBernardo/first-go-api
+WORKDIR /app
 
-COPY *.go ./
 COPY go.mod ./
 
 RUN go mod tidy
+
+COPY . .
+
 RUN go build main.go
 
 EXPOSE 8080
 
-CMD ["./main.sh"]
-ENTRYPOINT ["/go/src/SouzaBernardo/first-go-api"]
+ENTRYPOINT ["./main"]

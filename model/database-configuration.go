@@ -2,17 +2,18 @@ package model
 
 import (
 	"database/sql"
-
+	"fmt"
 	_ "github.com/lib/pq"
 )
 
-func ConnectDB() *sql.DB {
-	connection := "user=postgres dbname=store password=postgres host=localhost sslmode=disable"
-	db, err := sql.Open("postgres", connection)
+func ConnectDB() (*sql.DB, error) {
+	user := "postgres"
+	password := "postgres"
+	dbname := "postgres"
+	host := "localhost"
+	//host := "postgres-container"
+	connection := fmt.Sprintf("user=%s dbname=%s password=%s host=%s sslmode=disable", user, dbname, password, host)
+	open, err := sql.Open("postgres", connection)
 
-	if err != nil {
-		panic(err.Error())
-	}
-
-	return db
+	return open, err
 }
