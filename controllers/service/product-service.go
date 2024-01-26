@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	"github.com/SouzaBernardo/first-go-api/model/entity"
 	"log"
 	"net/http"
@@ -28,7 +29,7 @@ func Create(r *http.Request) {
 
 func Edit(r *http.Request) {
 	id := r.URL.Query().Get("id")
-
+	fmt.Println(">>>> ID ", id)
 	name := r.FormValue("name")
 	description := r.FormValue("description")
 	price, err := strconv.ParseFloat(r.FormValue("price"), 64)

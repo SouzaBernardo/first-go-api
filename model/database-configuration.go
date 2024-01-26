@@ -6,7 +6,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func ConnectDB() (*sql.DB, error) {
+func ConnectDB() *sql.DB {
 	user := "postgres"
 	password := "postgres"
 	dbname := "postgres"
@@ -15,5 +15,9 @@ func ConnectDB() (*sql.DB, error) {
 	connection := fmt.Sprintf("user=%s dbname=%s password=%s host=%s sslmode=disable", user, dbname, password, host)
 	open, err := sql.Open("postgres", connection)
 
-	return open, err
+	if err != nil {
+		fmt.Println("CANNOT CONNECT IN DATABASE")
+	}
+
+	return open
 }
