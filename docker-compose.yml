@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  postgres-contaner:
+  postgres-container:
     image: postgres
     container_name: postgres_container
     restart: always
@@ -24,7 +24,7 @@ services:
     ports:
       - "16543:80"
     depends_on:
-      - postgres-contaner
+      - postgres-container
     networks:
       - server-network
 
@@ -36,7 +36,7 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - postgres-contaner
+      - postgres-container
     networks:
       - server-network
 
