@@ -28,11 +28,7 @@ func Create(r *http.Request) {
 
 func Edit(r *http.Request) {
 	id := r.URL.Query().Get("id")
-	productId, err := strconv.Atoi(id)
-	if err != nil {
-		log.Println("Cannot convert id")
-		return
-	}
+
 	name := r.FormValue("name")
 	description := r.FormValue("description")
 	price, err := strconv.ParseFloat(r.FormValue("price"), 64)
@@ -45,7 +41,7 @@ func Edit(r *http.Request) {
 		log.Println("Cannot convert quantity")
 		return
 	}
-	entity.Edit(productId, name, description, price, quantity)
+	entity.Edit(id, name, description, price, quantity)
 }
 
 func Delete(r *http.Request) {

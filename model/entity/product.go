@@ -112,7 +112,7 @@ func Delete(id string) {
 	db.Close()
 }
 
-func Edit(id int, name, description string, price float64, quantity int) {
+func Edit(id string, name, description string, price float64, quantity int) {
 	db, _ := model.ConnectDB()
 
 	update, err := db.Prepare("update product set name=$2, description=$3, price=$4, quantity=$5 where id=$1")
