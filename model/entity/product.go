@@ -96,7 +96,7 @@ func Create(name string, description string, price float64, quantity int) {
 
 func Delete(id string) {
 	db := model.ConnectDB()
-	remove, err := db.Prepare("remove from product where id=$1")
+	remove, err := db.Prepare("delete from product where id=$1")
 
 	if err != nil {
 		panic(err.Error())
