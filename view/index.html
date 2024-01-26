@@ -31,15 +31,15 @@
                     <tbody>
                         {{ range . }}
                         <tr>
-                            <td>{{.Name}}</td>
-                            <td>{{.Description}}</td>
-                            <td>{{.Price}}</td>
-                            <td>{{.Quantity}}</td>
+                            <td>{{ .Name }}</td>
+                            <td>{{ .Description }}</td>
+                            <td>{{ .Price }}</td>
+                            <td>{{.Quantity }}</td>
                             <td>
-                                <button onclick="onEdit('{{.Id}}')" class="btn btn-secondary">Edit</button>
+                                <button onclick="onEdit('{{ .Id }}')" class="btn btn-secondary">Edit</button>
                             </td>
                             <td>
-                                <button onclick="onDelete('{{.Id}}')" class="btn btn-danger">Delete</button>
+                                <button onclick="onDelete('{{ .Id }}')" class="btn btn-danger">Delete</button>
                             </td>
                         </tr>
                         {{ end }}
