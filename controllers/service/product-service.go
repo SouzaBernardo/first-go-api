@@ -27,10 +27,8 @@ func Create(r *http.Request) {
 }
 
 func Edit(r *http.Request) {
-	if r.Method != "PUT" {
-		return
-	}
-	productId, err := strconv.Atoi(r.URL.Query().Get("id"))
+	id := r.URL.Query().Get("id")
+	productId, err := strconv.Atoi(id)
 	if err != nil {
 		log.Println("Cannot convert id")
 		return

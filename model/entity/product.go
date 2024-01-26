@@ -101,10 +101,7 @@ func Create(name string, description string, price float64, quantity int) {
 }
 
 func Delete(id string) {
-	db, err := model.ConnectDB()
-	if err != nil {
-		panic(err.Error())
-	}
+	db, _ := model.ConnectDB()
 	remove, err := db.Prepare("remove from product where id=$1")
 
 	if err != nil {
@@ -116,10 +113,8 @@ func Delete(id string) {
 }
 
 func Edit(id int, name, description string, price float64, quantity int) {
-	db, err := model.ConnectDB()
-	if err != nil {
-		panic(err.Error())
-	}
+	db, _ := model.ConnectDB()
+
 	update, err := db.Prepare("update product set name=$2, description=$3, price=$4, quantity=$5 where id=$1")
 
 	if err != nil {
