@@ -1,4 +1,4 @@
-# My first go API
+# Product Store MVC
 
 ## To run this APP: 
 
