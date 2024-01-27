@@ -2,8 +2,8 @@
 
 ## To run this APP: 
 
-- Clone: `git clone https://github.com/SouzaBernardo/first-go-api.git`
-- Go to the folder that cloned the repo: `cd first-go-api/`
+- Clone: `git clone https://github.com/SouzaBernardo/product-store-mvc`
+- Go to the folder that cloned the repo: `cd product-store-mvc/`
 
 ### With Docker:
 
@@ -22,11 +22,11 @@
 ### Without Docker:
 
 - Install go 1.21
-- Go to the folder that cloned the repo: `cd first-go-api/`
+- Go to the folder that cloned the repo: `cd product-store-mvc/`
 - Run `go mod tidy`
 - Install [PostgreSQL](https://www.postgresql.org/download/)
-- Open PGAdmin and run the schema on `first-go-api/model/scripts/schema.sql`
-- Run `go run main.go` in `/first-go-api`
+- Open PGAdmin and run the schema on `product-store-mvc/model/scripts/schema.sql`
+- Run `go run main.go` in `/product-store-mvc`
 
 Technical inforations:
 - go 1.21 version
