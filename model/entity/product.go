@@ -1,7 +1,7 @@
 package entity
 
 import (
-	"github.com/SouzaBernardo/product-store-mvc/model"
+	"github.com/SouzaBernardo/first-go-api/model"
 )
 
 type Product struct {
